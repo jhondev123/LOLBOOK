@@ -1,0 +1,18 @@
+{
+    "name": "jhona/lol-book",
+    "autoload": {
+        "psr-4": {
+            "Jhona\\LolBook\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jhondev123",
+            "email": "jhonattan.curtarelli@outlook.com"
+        }
+    ],
+    "require": {
+        "league/plates": "^3.5",
+      "ext-curl": "*"
+    }
+}
