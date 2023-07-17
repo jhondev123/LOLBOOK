@@ -16,11 +16,12 @@ class HomeController
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $champs = curl_exec($curl);
         curl_close($curl);
-        $champsCer = json_decode($champs);
+        $champsObj = json_decode($champs);
+        //$champsObj->data->Aatrox->tags[0] Para acessar as funções
+        //$champsObj->data->Aatrox->title Titulo do personagem
 
-
-
-
+        //var_dump($champsObj->data->Aatrox);
+        //exit();
         require_once __DIR__ . "/../../views/series/home.php";
 
     }

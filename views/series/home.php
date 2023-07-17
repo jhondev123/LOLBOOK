@@ -32,23 +32,43 @@
     </div>
 </nav>
 
-<!--  -->
+<!-- Seção de apresentação  -->
 
-<?php exit();?>
-<div class="container">
-<div class=" row">
-    <?php foreach ($personagens as $value): ?>
-        <div class="card col-6" style="width: 18rem;">
-            <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/<?= $value ?>_0.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"> <?= $value ?> </h5>
-                <p class="card-text">Rota:</p>
-                <p class="card-text">Função:</p>
-                <a href="#" class="btn btn-primary">Ver mais detalhes</a>
-            </div>
+<section class="bg-info d-flex align-items-center justify-content-around">
+    <div class="">
+        <h1>Eu sou o Jhonattan...</h1>
+        <p>Sou desenvolvedor web junior</p>
         </div>
+            <img src="img/foto.png" alt="" style="width: 400px; height: 400px">
+</section>
+
+
+<!-- personagens -->
+<div class="container row mx-auto g-4 my-4">
+    <?php foreach($personagens as $personagen): ?>
+        <div class="col-6 col-md-4 col-xxl-3">
+            <div class="card ">
+                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/<?= $personagen?>_0.jpg" alt="">
+                    <h5 class="card-title text-center"><?=$personagen?></h5>
+                <h6 class="card-title text-center"><?= $champsObj->data->$personagen->title?></h6>
+                <div class="card-body">
+                    <p class="card-text">Funções:
+                        <?php foreach($champsObj->data->$personagen->tags as $funcoes): ?>
+                        <?="{$funcoes}" ?>
+                        <?php endforeach;?>
+                    </p>
+                    <p class="card-text">Rota: </p>
+                    <a href="https://www.leagueoflegends.com/pt-br/champions/<?= $personagen ?>/" class="btn btn-primary">Ver mais detalhes</a>
+                </div>
+                </div>
+            </div>
     <?php endforeach;?>
+        </div>
 </div>
-</div>
+
+
+
+
+
 </body>
 </html>
